@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ресурспаки Minecraft</title>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"
+            integrity="sha384-YtHBLzCSx4OvNT9gHFkIEUu8Jc9DchjDCDJGGqpAx+uEgiDfLcwLxvLl5q5nWfUx"
+            crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: #1e1e1e; color: #fff; font-family: Arial, sans-serif; text-align: center; padding: 20px;
+        }
+        a {
+            color: #4CAF50; text-decoration: none; margin: 0 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #2c2c2c;
+            border-radius: 10px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ресурспаки Minecraft</h1>
+
+    <div class="category">
+        <h2>Among Us</h2>
+        <a href="/static/among_us/pack.zip" download>Скачать</a>
+    </div>
+    <div class="category">
+        <h2>Снайперы</h2>
+        <a href="/static/snipers/pack.zip" download>Скачать</a>
+    </div>
+    <div class="category">
+        <h2>Смертельный забег</h2>
+        <a href="/static/death_run/pack.zip" download>Скачать</a>
+    </div>
+
+    <script>
+        const socket = io();
+
+        socket.on('alert_message', data => {
+            alert(data.message);
+        });
+    </script>
+</body>
+</html>
